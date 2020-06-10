@@ -10,15 +10,17 @@ SingleObject.getInstance = (function(){
     let instance;
     return function(){
         if(!instance){
-            return new SingleObject()
+            instance = new SingleObject()
         }
         return instance
     }
 })()
 
-let o1 = SingleObject.getInstance
-let o2 = SingleObject.getInstance
-console.log(o1 === o2)
+let o1 = SingleObject.getInstance()
+o1.login()
+let o2 = SingleObject.getInstance()
+o2.login()
+console.log(o1 === o2) //true
 
 let o3 = new SingleObject()
-console.log(o1 === o3)
+console.log(o1 === o3) // false
