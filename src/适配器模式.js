@@ -18,6 +18,9 @@
 // console.log(target.request())
 
 
+
+
+
 // let ajax1;
 // ajax1({
 //     url: '/get',
