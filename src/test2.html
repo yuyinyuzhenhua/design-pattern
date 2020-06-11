@@ -6,6 +6,20 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <div id="dv">
+        <a href="#">A1</a>
+        <a href="#">A2</a>
+        <a href="#">A3</a>
+        <a href="#">A4</a>
+        <a href="#">A5</a>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script>
+        $('#dv').click(function(){
+            setTimeout($.proxy(function(){
+                $(this).css('background-color', 'pink')
+            }, this), 1000)
+        })
+    </script>
 </body>
 </html>
