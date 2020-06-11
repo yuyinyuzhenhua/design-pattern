@@ -1,0 +1,20 @@
+{ "type": "FeatureCollection", 
+    "features": [ 
+        { "type": "Feature", 
+           "geometry": { "type": "MultiPolygon", 
+                "coordinates": [
+                    [
+                        [
+                            [117.210024, 40.082262], 
+                            [117.105315, 40.074479], 
+                            [117.105315, 40.074479],  
+                            [117.210024, 40.082262]
+                        ]
+                    ]
+                ]
+            } 
+        }
+    ]
+}
+
+
