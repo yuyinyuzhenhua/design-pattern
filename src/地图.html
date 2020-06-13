@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <script type="text/javascript" src="https://webapi.amap.com/maps?v=1.4.15&key=6859f971ac31f7672e84729b478ac6fd"></script>
+    <script type="text/javascript" src="https://webapi.amap.com/maps?v=1.4.15&key=6859f971ac31f7672e84729b478ac6fd&plugin=Map3D,ElasticMarker,AMap.ToolBar,AMap.DistrictSearch"></script>
+    <script type="text/javascript" src="https://webapi.amap.com/ui/1.0/main.js?v=1.0.11"></script>
+</head>
+<body>
+    
+</body>
+<script>
+    var map = new AMap.Map('container');
+    var district = new AMap.DistrictSearch({                                
+                    extensions: 'all',   // 返回行政区边界坐标等具体信息                                
+                    level: 'district',   // 设置查询行政区级别为 区
+                    subdistrict: 0,     //获取边界不需要返回下级行政区
+                })
+
+    var bods = []
+    district.search('北京市', (status, result) =>  {
+        // console.log(result)
+        var res = result.districtList[0].boundaries
+        console.log(res[0])
+        res[0].forEach(item => {
+            bods.push([item.lng, item.lat])
+        })
+
+        console.log(bods)
+    })
+</script>
+</html>
