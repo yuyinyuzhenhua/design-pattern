@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .wrap{
+            width: 100%;
+            color: #fff;
+            padding: 0 150px 0 200px; 
+        }
+        .cloumn{
+            float: left;
+        }
+        .left{
+            width:200px;
+            background-color: green;
+        }
+        .center{
+            width: 100%;
+            background-color: pink;
+            /* height: 200px; */
+        }
+        .right{
+            width: 150px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <section class="wrap">
+        <div class="center cloumn">
+            <p>centercentercentercentercentercentercentercentercentercentercentercentercentercentercentercentercenter</p>
+            <p>centercentercentercentercentercentercentercentercentercentercentercentercentercentercentercentercenter</p>
+            <!-- <p>centercentercentercentercentercentercentercentercentercentercentercentercentercentercentercentercenter</p>
+            <p>centercentercentercentercentercentercentercentercentercentercentercentercentercentercentercentercenter</p>
+            <p>centercentercentercentercentercentercentercentercentercentercentercentercentercentercentercentercenter</p> -->
+        </div>
+        <div class="left cloumn">
+            <p>leftleftleftleftleftleftleftleft</p>
+            <p>leftleftleftleftleftleftleftleft</p>
+            <p>leftleftleftleftleftleftleftleft</p>
+            <p>leftleftleftleftleftleftleftleft</p>
+        </div>
+        <div class="right cloumn">rightrightrightrightrightrightright</div>
+    </section>
+</body>
+<script>
+    function print(fn) {
+        let a = 200
+        fn()
+    }
+
+    let a = 100
+    function fn(){
+        console.log(a)
+    }
+
+    print(fn)
+
+</script>
+</html>
