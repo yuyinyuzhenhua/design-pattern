@@ -1,3 +1,5 @@
+
+// 原有功能不变， 增加新的功能
 // class Circle{
 //     draw(){
 //         console.log('画一个圜')
@@ -49,6 +51,19 @@
 //         Object.assign(target.prototype, ...list)
 //     }
 // }
+
+// function testDesc(isDesc){
+//     return function(target){
+//         target.isDesc = isDesc
+//     }
+// }
+
+// @testDesc(false)
+// class Demo{
+//     constructor(){}
+// }
+
+// console.log(Demo.isDesc)
 
 // const Foo = {
 //     foo(){
@@ -114,15 +129,15 @@
 
 
 
-import { readonly, deprecate } from 'core-decorators'
+// import { readonly, deprecate } from 'core-decorators'
 
-class Person{
-    // @readonly
-    @deprecate('即将废弃', {url: 'www.baidu.com'})
-    name(){
-        console.log('zhang san')
-    }
-}
+// class Person{
+//     // @readonly
+//     @deprecate('即将废弃', {url: 'www.baidu.com'})
+//     name(){
+//         console.log('zhang san')
+//     }
+// }
 
-let p = new Person()
-p.name()
+// let p = new Person()
+// p.name()
