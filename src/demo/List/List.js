@@ -1,5 +1,7 @@
 import { GET_LIST } from '../config/config'
 import $ from 'jquery'
+import CreateItem from './CreateItem'
+
 
 export default class List{
     constructor(app){
@@ -8,6 +10,7 @@ export default class List{
     }
     init(){
         this.loadData().then(data => {
+            console.log(data)
             this.initItemList(data)
         }).then(() => {
             this.render()
@@ -15,13 +18,14 @@ export default class List{
     }
     loadData(){
         return fetch(GET_LIST).then(result => {
-            console.log(result)
             return result.json()
         })
     }
     initItemList(data){
-        data.map(itemData => {
+        data.forEach(itemData => {
             // 
+            let item = CreateItem(this, itemData)
+            item.init()
         })
     }
     render(){

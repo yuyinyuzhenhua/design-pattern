@@ -2,11 +2,25 @@
     {
         "id": 1,
         "name": "小米手机",
-        "price": 2000
+        "price": 2000,
+        "discount": 1
     },
     {
         "id": 2,
         "name": "华为手机",
-        "price": 3500
+        "price": 3500,
+        "discount": 0
+    },
+    {
+        "id": 3,
+        "name": "vivo x3手机",
+        "price": 2200,
+        "discount": 0
+    },
+    {
+        "id": 4,
+        "name": "oppo Max",
+        "price": 1200,
+        "discount": 0
     }
 ]
