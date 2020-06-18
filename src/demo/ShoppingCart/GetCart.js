@@ -16,7 +16,7 @@ class Cart{
         })
     }
     getList(){
-        return this.list.map(item => item.name).join('/n')
+        return this.list.map(item => item.name).join('\n')
     }
 }
 
