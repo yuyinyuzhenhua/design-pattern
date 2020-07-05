@@ -4,22 +4,75 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        #dv{
+            width: 200px;
+            height: 200px;
+            border: 1px solid red;
+        }
+    </style>
 </head>
 <body>
-    <div id="dv">
+    <div id="dv" draggable="true">
         <a href="#">A1</a>
         <a href="#">A2</a>
         <a href="#">A3</a>
         <a href="#">A4</a>
         <a href="#">A5</a>
     </div>
+    <input type="text" id="ipt">
     <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
     <script>
-        $('#dv').click(function(){
-            setTimeout($.proxy(function(){
-                $(this).css('background-color', 'pink')
-            }, this), 1000)
-        })
+        // $('#dv').click(function(){
+        //     setTimeout($.proxy(function(){
+        //         $(this).css('background-color', 'pink')
+        //     }, this), 1000)
+        // })
+
+        let ipt = document.querySelector('#ipt')
+        
+        function debounce(fn, delay = 500) {
+            let timer = null
+            return function() {
+                if(timer) {
+                    clearTimeout(timer)
+                }
+                timer = setTimeout(() => {
+                    fn.apply(this, arguments)
+                    timer = null
+                }, delay)
+            }
+        }
+        ipt.addEventListener('keyup', debounce(function(e){
+            console.log(e.target.value)
+        }))
+
+        let dv = document.getElementById('dv')
+        // let timer = null
+        // dv.addEventListener('drag', function(e){
+        //     if(timer){
+        //         return
+        //     }
+        //     timer = setTimeout(function(){
+        //         console.log(e.offsetX, e.offsetY)
+        //         timer = null
+        //     }, 500)
+        // })
+        function throttle(fn, delay = 500) {
+            let timer = null
+            return function(){
+                if(timer){
+                    return
+                }
+                timer = setTimeout(() => {
+                    fn.call(this, ...arguments)
+                    timer = null
+                }, delay)
+            }
+        }
+        dv.addEventListener('drag', throttle(function(e){
+            console.log(e.offsetX, e.offsetY)
+        }))
     </script>
 </body>
 </html>
