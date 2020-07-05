@@ -1,7 +1,7 @@
-async function fn(){
-    return 100
-}
 
-const res = fn()
-console.log(res)
+import regeneratorRuntime from "regenerator-runtime";
+import App from './demo/app'
 
+const app = new App('#app')
+
+app.init()
