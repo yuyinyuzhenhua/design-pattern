@@ -64,6 +64,6 @@ LoginForm.getInstance = (function(){
 let p1 = LoginForm.getInstance()
 p1.show()
 let p2 = LoginForm.getInstance()
-p1.hide()
+p2.hide()
 
 console.log(p1 === p2) // true
