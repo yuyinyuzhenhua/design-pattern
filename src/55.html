@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>mianshi</h1>
+    <script>
+        // var foo = {},
+        //     F = function(){};
+        // Object.prototype.a = 'value a';
+        // Function.prototype.b = 'value b';
+
+        // console.log(foo.a)   //'value a';
+        // console.log(foo.b)    //undefined
+        // console.log(F.a)     // 'value a'
+        // console.log(F.b)   //'value b';
+
+//         Object.prototype.method=function(){
+// 　　console.log(this);
+// }
+// var myObject={
+// 　　a:1,
+// 　　b:2,
+// 　　c:3
+// }
+// for (var key in myObject) {
+//   console.log(key);
+// }
+
+
+
+        // console.log('a'); //1
+        // setTimeout(() => {
+        //     console.log('b'); //6
+        // }, 0);
+        // console.log('c'); //2
+        // Promise.resolve().then(() => {
+        //     console.log('d'); //4
+        // })
+        // .then(() => {
+        //     console.log('e'); //5
+        // });
+
+        // console.log('f'); //3
+
+        // let givenArr = [[1, 2, 2], [3, 4, 5, 5], [6, 7, 8, 9, [11, 12, [12, 13, [14]]]], 10];
+
+        // function flat(ary) {
+        //     // let res = []
+        //     // for(let i = 0; i < ary.length; i++) {
+        //     //     Array.isArray(ary[i]) ? res = res.concat(flat(ary[i])) : res = res.concat(ary[i])
+        //     // }
+        //     // return res;
+        //     return ary.reduce((prev, cur) => {
+        //         return prev.concat(Array.isArray(cur) ? flat(cur) : cur)
+        //     },[])
+        // }
+        // console.log(flat(givenArr));
+        
+
+        // {
+        //  A: [fn1, fn2],
+        //  B: [fn3, fn4],
+        //  C: [fn5, fn6],
+        // }
+        const hasOwn = Object.prototype.hasOwnProperty
+        class Sub{
+            $pond = {}
+            $on(type, fn){
+                let $pond = this.$pond, arr;
+                !hasOwn.call($pond, type) ? $pond[type] = [] : null
+                arr = $pond[type];
+                !arr.includes(fn) ? arr.push(fn) : null;
+            }
+            $off(type, fn){
+                let $pond = this.$pond, arr;
+                arr = $pond[type]
+                if(!arr) return;
+                for(let i = 0; i < arr.length; i++) {
+                    if(arr[i] === fn) {
+                        // arr.splice(i, 1)
+                        arr[i] = null
+                    }
+                }
+            }
+            $emit(type, ...args){
+                let $pond = this.$pond, arr;
+                arr = $pond[type]
+                if(!arr) return;
+                for(let i = 0; i < arr.length; i++) {
+                    let item = arr[i];
+                    if(typeof item !== 'function'){
+                        arr.splice(i, 1)
+                        i--;
+                        continue;
+                    }
+                    item(...args)
+                }
+            }
+        }
+
+
+        function fn1(){console.log(1);}
+        function fn2(x, y){
+            console.log(2, x, y);
+            s.$off('Marry', fn2)
+            s.$off('Marry', fn1)
+        }
+        function fn3(){console.log(3);}
+        function fn4(){console.log(4);}
+        function fn5(){console.log(5);}
+        let s = new Sub()
+        s.$on('Marry', fn1)
+        s.$on('Marry', fn2)
+        s.$on('Marry', fn3)
+        s.$on('Marry', fn4)
+        s.$on('Marry', fn5)
+
+        
+        document.onclick = function(){
+            s.$emit('Marry', 300, 400)
+        }
+        
+
+    </script>
+</body>
+</html>

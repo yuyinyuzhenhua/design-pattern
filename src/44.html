@@ -4,9 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    <link rel="dns-prefetch" href="https://www.baidu.com">
+    <style>
+        .fa{
+            width: 400px;
+            height:0;
+            border: 1px solid red;
+            box-sizing: border-box;
+            position: relative;
+        }
+        .son{
+            position: absolute;
+            width: 100%;
+            padding-top: 50%;
+            background-color: green;
+        }
+    </style>
 </head>
 <body>
     <h1>闭包应用</h1>
+  
+    <div class="fa">
+        <div class="son">
+            
+        </div>
+    </div>
     <button id="btn">click</button>
     <button id="btn2">click2</button>
     <script>
@@ -233,32 +256,76 @@
 
         // EC(G) 
         // function Foo(){..}      getName---4
-        function Foo(){
-            getName = function(){
-                console.log(1);
-            }
-            return this;
-        }
+        // function Foo(){
+        //     getName = function(){
+        //         console.log(1);
+        //     }
+        //     return this;
+        // }
 
-        Foo.getName = function(){
-            console.log(2);            
-        }
-        Foo.prototype.getName = function(){
-            console.log(3);            
-        }
-        var getName = function(){
-            console.log(4);            
-        }
-        function getName(){
-            console.log(5);            
-        }
-        Foo.getName(); //2
-        getName() // 4
-        Foo().getName(); 1
-        getName(); // 1
-        new Foo.getName() //2
-        new Foo().getName() // 3
-        new new Foo().getName() // 3
+        // Foo.getName = function(){
+        //     console.log(2);            
+        // }
+        // Foo.prototype.getName = function(){
+        //     console.log(3);            
+        // }
+        // var getName = function(){
+        //     console.log(4);            
+        // }
+        // function getName(){
+        //     console.log(5);            
+        // }
+        // Foo.getName(); //2
+        // getName() // 4
+        // Foo().getName(); 1
+        // getName(); // 1
+        // new Foo.getName() //2
+        // new Foo().getName() // 3
+        // new new Foo().getName() // 3
+
+
+
+        // if([]==false){console.log(1)}; // 0 == 0  /
+        // if({}==false){console.log(2)}; // NaN == 0
+        // if([]){console.log(3)} // true 不是 null undefined '' NaN 0
+        // if([1]==[1]){console.log(4)} // false
+
+
+
+        // 微任务 console.log('async1 end') console.log('promise2')
+        // 宏任务 console.log('setTimeout') 
+        // async function async1(){
+        //     console.log('async1 start')  // 2
+        //     await async2()
+        //     console.log('async1 end') // 6
+        // }
+        // async function async2(){
+        //     console.log('async2') // 3
+        // }
+        // console.log('script start') // 1
+        // setTimeout(function(){
+        //     console.log('setTimeout')  //8
+        // },0)  
+        // async1();
+        // new Promise(function(resolve){
+        //     console.log('promise1') // 4
+        //     resolve();
+        // }).then(function(){
+        //     console.log('promise2') // 7
+        // })
+        // console.log('script end') // 5
+
+
+
+        // let obj = {
+        //     name: '张三',
+        //     fn: (function(x){
+        //         return x + 10
+        //     })(obj.name)
+        // }
+        // console.log(obj.fn);
+        
+
     </script>
 </body>
 </html>
