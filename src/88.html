@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            position: absolute;
+        }
+    </style>
+    <!-- <script src="../node_modules/zepto/dist/zepto.js"></script> -->
+</head>
+<body>
+    <h1>移动端事件</h1>
+    <div class="outer" id="outer">
+        <div class="inner" id="inner">
+            <div class="center" id="center">center</div>
+        </div>
+    </div>
+    <script>
+
+
+        // box.addEventListener('touchstart', function(ev){
+        //     // console.log('touchstart');
+        //     // console.log(ev);
+        //     let point = ev.changedTouches[0];
+        //     this.startX = point.clientX;
+        //     this.startY = point.clientY;
+        //     this.startL = this.offsetLeft;
+        //     this.startT = this.offsetTop;
+        //     this.isMove = false;
+        // })
+        // box.addEventListener('touchmove', function(ev){
+        //     // console.log('touchmove');
+        //     // console.log(ev);
+        //     let point = ev.changedTouches[0];
+        //     let changeX = point.clientX - this.startX;
+        //     let changeY = point.clientY - this.startY;
+        //     if(changeX > 10 || changeY > 10) {
+        //         this.isMove = true;
+        //         this.style.left = (this.startL + changeX) + 'px';
+        //         this.style.top = (this.startT + changeY) + 'px';
+        //     }
+        // })
+        // box.addEventListener('touchend', function(ev){
+        //     // console.log('touchend');
+        //     // console.log(ev);
+        //     if(!this.isMove) {
+        //         console.log('点击操作');
+        //     } else {
+        //         console.log('滑动操作');
+        //     }
+        // })
+        // box.onclick = function(){
+        //     console.log(11);
+        // }
+
+        // window.addEventListener('beforeunload', function(event){
+           
+        // })
+    </script>
+</body>
+</html>

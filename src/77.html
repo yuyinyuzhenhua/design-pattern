@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>算法</h1>
+    <script>
+        // let ary = [12, 23, 12, 15, 25, 23, 25, 14, 16];
+        // let arr = new Set(ary)
+        // console.log(Array.from(arr));
+        // console.log([...arr]);
+        // function noRepeat(ary) {
+            // let newArr = [ary[0]];
+            // for(let i = 0; i < ary.length; i++) {
+            //     let item = ary[i];
+            //     if(newArr.indexOf(item) == -1) {
+            //         newArr.push(item)
+            //     }
+            // }
+            // return newArr;
+
+            // let obj = {};
+            // for(let i = 0; i < ary.length; i++) {
+            //     let item = ary[i];
+            //     if(typeof obj[item] !== 'undefined') {
+            //         ary[i] = ary[ary.length - 1];
+            //         ary.length--;
+            //         i--;                    
+            //         continue;
+            //     } else {
+            //         obj[item] = 'xxx';
+            //     }
+            // }
+            // obj = null;
+            // return ary
+
+            // let str = ary.join('@')+'@';
+            // str.replace(/(\d+@)\1*/g, (val, group1) => {
+                
+            // })
+
+        // }
+
+        // console.log(noRepeat(ary));
+
+        // let ary = [12, 23, 12, 15, 25, 23, 25, 14, 16];
+
+        // function sort(ary) {
+            // 冒泡排序
+            // for(let i = 0; i <ary.length; i++) {
+            //     for(let j = 0; j < ary.length; j++) {
+            //         if(ary[j+1] > ary[j]){
+            //             [ary[j], ary[j+1]] = [ary[j+1], ary[j]]
+            //         }
+            //     }
+            // }
+            // return ary
+
+            // 插入排序
+        //     let handle = [];
+        //     handle.push(ary[0])
+        //     for(let i = 1; i < ary.length; i++) {
+        //         let current = ary[i];
+        //         for(let j = handle.length - 1; j >= 0; j--) {
+        //             if(current > handle[j]) {
+        //                 handle.splice(j+1, 0, current)
+        //                 break;
+        //             }
+        //             if(j === 0) {
+        //                 handle.unshift(current)
+        //             }
+        //         }
+        //     }
+        //     return handle;
+        // }
+        // console.log(sort(ary));
+
+
+        // function quick(ary) {
+
+        //     if(ary.length <=0) {
+        //         return ary;
+        //     }
+        //     let mIndex = Math.floor(ary.length/2);
+        //     let mItem = ary.splice(mIndex, 1)[0];
+
+        //     let arrLeft = [], arrRight = [];
+        //     for(let i = 0; i < ary.length; i++) {
+        //         let item = ary[i];
+        //         if(mItem > item) {
+        //             arrRight.push(item)
+        //         } else {
+        //             arrLeft.push(item)
+        //         }
+        //     }
+
+        //     return quick(arrLeft).concat(mItem, quick(arrRight))
+        // }
+
+        // console.log(quick(ary));
+
+
+
+        // let ary = [
+        //     [1, 2, 3],
+        //     [3, 4, 5, 6],
+        //     [6, 7, 8, 9, [11, 22, 33, [23, 24, [14]]]]
+        // ]
+        // console.log(ary.flat(Infinity))
+        // console.log(ary.toString().split(',').map(item => parseFloat(item)))
+
+        
+        // while(ary.some(item => Array.isArray(item))) {
+        //     // ary = [].concat(...ary)
+        //     ary = [...ary];
+        // }
+        // console.log(ary);
+        // window.addEventListener('beforeunload', function(event){
+        //      // Cancel the event as stated by the standard.
+        //         // event.preventDefault();
+        //         // Chrome requires returnValue to be set.
+        //         event.returnValue = '确认离开';
+        // })
+    </script>
+</body>
+</html>

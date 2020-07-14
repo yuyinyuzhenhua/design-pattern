@@ -27,7 +27,9 @@
   },
   "dependencies": {
     "core-decorators": "^0.20.0",
+    "fastclick": "^1.0.6",
     "jquery": "^3.5.1",
-    "regenerator-runtime": "^0.13.5"
+    "regenerator-runtime": "^0.13.5",
+    "zepto": "^1.2.0"
   }
 }
